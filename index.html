@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LUDWIG the arcade</title>
+    <link rel="icon" type="image/svg+xml" href="Element 1lud.svg" alt="Pferdeähnliche Pixelgrafik in Grüntönen, welche ein Schwert trägt">
+    <link rel="stylesheet" href="style3.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&amp;display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+    <!-- CRT-Scanline-Effekt -->
+    <div class="crt-overlay" aria-hidden="true"></div>
+
+    <nav class="nav">
+        <a href="#top" class="nav__lud">
+            <img src="Element 1lud.svg" alt="Pferdeähnliche Pixelgrafik in Grüntönen, welche ein Schwert trägt" class="nav__icon">
+            LUDWIG
+        </a>
+        <ul class="nav__links">
+            <li><a href="#Anforderungen">Anforderungen</a></li>
+            <li><a href="#Knopfbelegung">Knopfbelegung</a></li>
+            <li><a href="#Vorlagen">Vorlagen</a></li>
+            <li><a href="#kontakt">Kontakt</a></li>
+        </ul>
+    </nav>
+
+    <div class="story" id="top">
+
+        <div class="arcade3d">
+            <div class="canvas-wrap">
+                <canvas id="arcade-canvas"></canvas>
+            </div>
+        </div>
+
+        <div class="story__content">
+            <div class="content" id="ueber">
+                <section class="ueber">
+                    <p class="meta-line">SoSe 2026 · Béla Warin · Johanna Feix · TH-Mannheim</p>
+                    <h2 class="glow-heading">Wer oder was ist LUDWIG?</h2>
+                    <p>LUDWIG ist ein von uns selbstgebaute Arcade. Wir, Béla Warin und
+                        Johanna Feix, wollten eine Möglichkeit schaffen, in der Hochschule
+                        entstandene Spiele zu präsentieren und für alle zugänglich zu
+                        machen. Gemeinsam mit ein paar helfenden Händen haben wir LUDWIG
+                        erschaffen – hier erfährst du, was du beim Programmieren deiner
+                        Spiele beachten solltest und wie du sie aufspielen kannst.
+                    </p>
+                    <p class="muted">
+                        Entstanden im Sommersemester 2026. Danke an Veit, die Zentral
+                        Werkstatt der TH Mannheim, das gesamte MADLab, und an Maximo Böttger für die
+                        tollen Illustrationen auf der Arcade.
+                    </p>
+                </section>
+            </div>
+        </div>
+    </div>
+
+    <div class="content" id="Anforderungen">
+        <h2 class="glow-heading">Anforderungen</h2>
+        <div class="spec-grid" id="anforderungen-pt1">
+            <div class="spec-card">
+                <h3>Auflösung</h3>
+                <p>Das Spiel sollte automatisch im Vollbild starten. 1920&nbsp;px × 1080&nbsp;px ist die
+                    maximale Größe
+                    des Bildschirms.</p>
+            </div>
+            <div class="spec-card">
+                <h3>Format</h3>
+                <p>Das Spiel sollte eine ausführbare Datei sein, solange sie auf irgendeine Art und Weise das
+                    Programm
+                    startet, passt das. Wenn du etwas besonders Ausgefallenes vorhast, frag uns gerne, wir
+                    finden eine
+                    Lösung!</p>
+            </div>
+            <div class="spec-card">
+                <h3>Design</h3>
+                <p>Die Grafik deines Spieles ist dir komplett freigestellt. Wenn du die Vorlagen für das
+                    Arcade-Menü
+                    verwendest, beachte bitte: Die Schrift, die wir verwenden, heißt <a
+                        href="https://datagoblin.itch.io/monogram">Monogram</a> und sollte auch
+                    von dir
+                    für die Menü-Oberfläche verwendet werden. In deinem Spiel darfst du Monogram nutzen, musst
+                    du aber
+                    nicht.</p>
+                <p>
+                    Monogram ist eine kostenloses Font, die wir euch auch zur Verfügung stellen. Falls euch die Font
+                    super gut gefällt könnt ihr dem Designer auch hier: <a
+                        href="https://datagoblin.itch.io/monogram">https://datagoblin.itch.io/monogram</a> eine kleine
+                    Spende dalassen (Ja das haben wir auch gemacht)</p>
+                </p>
+            </div>
+        </div>
+
+        <div class="anforderungen-bild">
+            <img src="anforderungen_arcade.webp"
+                alt="Frontalansicht eines schwarzen Arcade-Automaten mit zwei Spielerplätzen. In der Mitte befindet sich ein leicht gewölbter Bildschirm im Retro-Stil, auf dem in weißer Pixel-Schrift der Text „You have a Game. We have the Machine“ vor einem sternenähnlichen Hintergrund angezeigt wird. Unter dem Bildschirm liegen links und rechts jeweils ein roter Joystick sowie sechs farbige, sechseckige Tasten. Die Tasten sind in zwei Reihen angeordnet und in Weiß, Gelb, Grün, Blau, Rot und Schwarz gehalten. Das Gehäuse des Automaten ist schlicht schwarz mit kantigem Design und einem breiten Monitoraufsatz.">
+        </div>
+
+        <div class="spec-grid" id="anforderungen-pt2">
+            <div class="spec-card">
+                <h3>Ein-/Ausstieg</h3>
+                <p>Dein Spiel sollte per Knopfdruck beendbar/pausierbar sein und zurück ins Menü springen.</p>
+            </div>
+            <div class="spec-card">
+                <h3>Speicherstände</h3>
+                <p>Wenn du Highscores haben möchtest, lass sie als .txt-Datei schreiben. Unser Programm liest
+                    sie dann
+                    regelmäßig aus.</p>
+            </div>
+            <div class="spec-card">
+                <h3>Eingabe</h3>
+                <p>Grundsätzlich reicht es, wenn du ein Spiel hast, das mit der vorgegebenen Knopfbelegung
+                    funktioniert.
+                    Es gibt kein Maus- oder Touch-Input.</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="content" id="Knopfbelegung">
+        <h2 class="glow-heading">Knopfbelegung</h2>
+        <img src="knopfbelegung_og.png"
+            alt="Schematische Darstellung einer Arcade-Controller-Belegung für zwei Spieler. Links ist „PLAYER 1“, rechts „PLAYER 2“. Beide Seiten zeigen jeweils einen roten Joystick mit Richtungsbelegung sowie sechs farbige Aktionsknöpfe in einem 3×2-Raster: oben links L, oben Mitte Y, oben rechts R; unten links A, unten Mitte X, unten rechts B. Für Spieler 1 sind die Tasten mit der Tastatur belegt: Joystick W, A, S, D; Knöpfe Q, H, E (oben) sowie B, N, M (unten). Zwischen den Spielern befinden sich die Tasten Select (1) und Start (Enter). Für Spieler 2 ist der Joystick mit I, J, K, L belegt; Knöpfe U, Pfeiltaste hoch, O (oben) sowie Pfeiltaste links, Pfeiltaste unten, Pfeiltaste rechts. Die Knöpfe sind farblich markiert: L und R schwarz (Spieler 2 weiß), Y gelb, A grün, X blau und B rot. Alle Elemente sind auf einer weißen, leicht schräg dargestellten Controller-Oberfläche angeordnet. ">
+        <!-- Bild wird in naher Zukunft erneuert, da sich ein paar Sachen geaendert haben-->
+        <section class="Knopfbelegung">
+            <p>Das ist vermutlich klar, aber die L&nbsp;Y&nbsp;R&nbsp;A&nbsp;X&nbsp;B
+                Knöpfe haben extra eine Bezeichnung bekommen, damit ihr euren
+                Spieler:innen besser vermitteln könnt, wie eure Steuerung
+                funktioniert!
+            </p>
+
+            <h3>1 Spieler, 2 Spieler:innen, 4 Spielende – du entscheidest!</h3>
+            <p>Du hast für dein Spiel zwei Joysticks und 12 Knöpfe zur Verfügung (+ Start und Select). Die
+                Belegung der
+                Knöpfe siehst du links am Modell. Das Setup ist für zwei Spieler:innen angelegt, das heißt aber
+                nicht,
+                dass du ein Spiel für zwei machen musst. Du musst auch nicht alle Knöpfe belegen, wenn du sie
+                nicht
+                brauchst.</p>
+            <p>Du hast nur 1 Spieler? Dann hast du auch die doppelte Menge an Knöpfen zur Verfügung!</p>
+            <p>Du hast 2 Spieler:innen? Dann hat jede Person einen Joystick und sechs Knöpfe zur Verfügung!</p>
+            <p>Du möchtest 4 Spieler haben? Klar, dann belege deine Knöpfe dafür einfach anders!</p>
+            <p class="muted">Das, was du hier siehst, ist nur eine Vorlage zur Veranschaulichung, das Limit ist,
+                was du
+                dir ausdenken kannst! (Und der Platz vor der Maschine.)</p>
+
+            <h3>Select und Start</h3>
+            <p>Bisher nutzen einige Spiele START als Eingabe-/Bestätigungsknopf und SELECT als Exitknopf. Daran
+                musst du
+                dich nicht orientieren, kannst du aber.</p>
+
+
+        </section>
+    </div>
+
+    <section class="section" id="Vorlagen">
+        <h2 class="glow-heading">Vorlagen</h2>
+        <div class="template-grid">
+            <div class="template-card">
+                <div class="template-card__preview"><img src="cartridge.png"
+                        alt="Pixelgrafik, welche eine alten Spielekasette ähnelt"></div> 
+                <h3>Cartridge</h3>
+                <p>Wie damals auf NES und Co. haben wir für die Spiele eine Cartridge erstellt. Hier ist Platz
+                    für ein
+                    Logo deines Spiels oder dessen Name.</p>
+                <a class="btn" href="cursor.png" download="">Download coming soon →</a>
+            </div>
+            <div class="template-card">
+                <div class="template-card__preview"><img src="marquee.jpg"
+                        alt="Bild eines fertigen installierten, 3D gedruckten Marquee Schildes"></div> <!-- erstmal ein Platzhalter bis wir ein besseres Bild haben -->
+                <h3>3D-Marquee Bild</h3>
+                <p>Oben in der Arcade gibt es ein mit LED beleuchtetes Marquee (Banner). Wenn du dein Spiel
+                    bewerben
+                    möchtest oder einfach mal eine passende <a
+                        href="https://de.wikipedia.org/wiki/Lithophanie">Lithophanie</a> mit dem 3D-Drucker erstellen
+                    möchtest,
+                    hast du
+                    hier die passende Vorlage.</p>
+                <a class="btn" href="#" download="">Download coming soon →</a>
+            </div>
+            <div class="template-card">
+                <div class="template-card__preview"><img src="Element 1blue.png"
+                        alt="Beispiel eines Spielhintergrundes;"></div>
+                <h3>Hintergrund</h3>
+                <p>Mit dieser .psd kannst du ein passendes Hintergrundbild erstellen. Dieses wird in der
+                    Spielauswahl
+                    angezeigt. Zeig den Spielenden, was sie erwartet.</p>
+                <a class="btn" href="#" download="">Download coming soon →</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="section" id="Installation">
+        <h2 class="glow-heading">Installation</h2>
+        <div class="steps">
+            <img src="install_icon.png"
+                alt="Pixelgrafik eines stilisierten Installationssymbols in verschiedenen Grüntönen auf schwarzem Hintergrund. Im Zentrum zeigt ein nach unten gerichteter Pfeil mit dem Schriftzug „INSTALL“ auf eine rechteckige Ablagefläche. Um den Pfeil herum sind leuchtende Pixel und vertikale Lichteffekte angeordnet, die den Eindruck einer digitalen oder futuristischen Installation vermitteln. Das Symbol ist im Retro-Pixelart-Stil gestaltet.">
+            <ol class="schritte">
+                <li><strong>Sag Bescheid!</strong> — Melde dich bei uns oder beim MAD Lab.</li>
+                <li><strong>Auf die Arcade kopieren</strong> — Komm mit einem USB-Stick oder einer Festplatte, auf
+                    der du
+                    einen Ordner mit deinem Spiel, deinen Bilddateien und bei Bedarf deiner .txt-Datei hast, vorbei.
+                </li>
+                <li><strong>Drag and Drop</strong> — Leg den Ordner an den dafür vorgesehenen Ort (wo der ist, sagen
+                    wir dir
+                    dann) und füg dein Spiel einfach per Drag and Drop hinzu.</li>
+                <li><strong>Testen und Spaß haben!</strong> — Funktioniert alles, wie du es dir vorgestellt hast?
+                    Schnappt
+                    euch ein paar Mitmenschen und testet euer Spiel. Bestenfalls habt ihr jetzt Spaß und alle können
+                    euer
+                    Spiel bewundern.</li>
+            </ol>
+        </div>
+    </section>
+
+    <section class="section section--alt" id="kontakt">
+        <h2 class="glow-heading">Kontakt</h2>
+        <div class="section__body">
+            <p>Bei Fragen zur Arcade, bei Problemen oder wenn ihr euer eigenes Spiel einrichten wollt, schreib
+                uns:</p>
+            <a class="btn" href="mailto:arcadeludwig@gmail.com">arcadeludwig@gmail.com →</a>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <p>LUDWIG the arcade</p>
+        <div class="footer__links">
+            <!-- <a href="#">Instagram</a> kommt evtl noch -->
+            <a href="mailto:arcadeludwig@gmail.com">Mail</a>
+            <a href="impressum.html">Impressum</a>
+        </div>
+    </footer>
+
+    <script type="importmap">
+  {
+    "imports": {
+      "three": "https://unpkg.com/three@0.160.0/build/three.module.js",
+      "three/addons/": "https://unpkg.com/three@0.160.0/examples/jsm/"
+    }
+  }
+  </script>
+    <script type="module" src="script.js"></script>
+</body>
