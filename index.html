@@ -5,10 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>LUDWIG the arcade</title>
-    <link rel="icon" type="image/svg+xml" href="Element 1lud.svg" alt="Pferdeähnliche Pixelgrafik in Grüntönen, welche ein Schwert trägt">
+    <link rel="icon" type="image/svg+xml" href="Element 1lud.svg">
     <link rel="stylesheet" href="style3.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&amp;display=swap" rel="stylesheet">
 </head>
 
 <body>
@@ -51,7 +49,7 @@
                     </p>
                     <p class="muted">
                         Entstanden im Sommersemester 2026. Danke an Veit, die Zentral
-                        Werkstatt der TH Mannheim, das gesamte MADLab, und an Maximo Böttger für die
+                        Werkstatt der TH Mannheim, das gesamte MAD Lab, und an Maximo Böttger für die
                         tollen Illustrationen auf der Arcade.
                     </p>
                 </section>
@@ -64,7 +62,7 @@
         <div class="spec-grid" id="anforderungen-pt1">
             <div class="spec-card">
                 <h3>Auflösung</h3>
-                <p>Das Spiel sollte automatisch im Vollbild starten. 1920&nbsp;px × 1080&nbsp;px ist die
+                <p>Das Spiel muss automatisch im Vollbild starten. 1920&nbsp;px × 1080&nbsp;px ist die
                     maximale Größe
                     des Bildschirms.</p>
             </div>
@@ -122,9 +120,9 @@
 
     <div class="content" id="Knopfbelegung">
         <h2 class="glow-heading">Knopfbelegung</h2>
-        <img src="knopfbelegung_og.png"
-            alt="Schematische Darstellung einer Arcade-Controller-Belegung für zwei Spieler. Links ist „PLAYER 1“, rechts „PLAYER 2“. Beide Seiten zeigen jeweils einen roten Joystick mit Richtungsbelegung sowie sechs farbige Aktionsknöpfe in einem 3×2-Raster: oben links L, oben Mitte Y, oben rechts R; unten links A, unten Mitte X, unten rechts B. Für Spieler 1 sind die Tasten mit der Tastatur belegt: Joystick W, A, S, D; Knöpfe Q, H, E (oben) sowie B, N, M (unten). Zwischen den Spielern befinden sich die Tasten Select (1) und Start (Enter). Für Spieler 2 ist der Joystick mit I, J, K, L belegt; Knöpfe U, Pfeiltaste hoch, O (oben) sowie Pfeiltaste links, Pfeiltaste unten, Pfeiltaste rechts. Die Knöpfe sind farblich markiert: L und R schwarz (Spieler 2 weiß), Y gelb, A grün, X blau und B rot. Alle Elemente sind auf einer weißen, leicht schräg dargestellten Controller-Oberfläche angeordnet. ">
-        <!-- Bild wird in naher Zukunft erneuert, da sich ein paar Sachen geaendert haben-->
+        <img src="Knopfbelegung_update2.svg"
+            alt="Schematische Darstellung einer Arcade-Controller-Belegung für zwei Spieler. Links ist „PLAYER 1“, rechts „PLAYER 2“. Beide Seiten zeigen jeweils einen roten Joystick mit Richtungsbelegung sowie sechs farbige Aktionsknöpfe in einem 3×2-Raster: oben links L, oben Mitte Y, oben rechts R; unten links A, unten Mitte X, unten rechts B. Für Spieler 1 sind die Tasten mit der Tastatur belegt: Joystick W, A, S, D; Knöpfe Q, H, E (oben) sowie B, N, Ä (unten). Zwischen den Spielern befinden sich die Tasten Select (1) und Start (Enter). Für Spieler 2 ist der Joystick mit I, J, K, L belegt; Knöpfe U, Pfeiltaste hoch, O (oben) sowie Pfeiltaste links, Pfeiltaste unten, Pfeiltaste rechts. Die Knöpfe sind farblich markiert: L und R schwarz (Spieler 2 weiß), Y gelb, A grün, X blau und B rot. Alle Elemente sind auf einer weißen, leicht schräg dargestellten Controller-Oberfläche angeordnet. ">
+    
         <section class="Knopfbelegung">
             <p>Das ist vermutlich klar, aber die L&nbsp;Y&nbsp;R&nbsp;A&nbsp;X&nbsp;B
                 Knöpfe haben extra eine Bezeichnung bekommen, damit ihr euren
@@ -166,7 +164,7 @@
                 <p>Wie damals auf NES und Co. haben wir für die Spiele eine Cartridge erstellt. Hier ist Platz
                     für ein
                     Logo deines Spiels oder dessen Name.</p>
-                <a class="btn" href="cursor.png" download="">Download coming soon →</a>
+                <a class="btn" href="mockups/Cartridge Mockup.psd" download="">Download →</a>
             </div>
             <div class="template-card">
                 <div class="template-card__preview"><img src="marquee.jpg"
@@ -178,7 +176,7 @@
                         href="https://de.wikipedia.org/wiki/Lithophanie">Lithophanie</a> mit dem 3D-Drucker erstellen
                     möchtest,
                     hast du
-                    hier die passende Vorlage.</p>
+                    hier eine Anleitung, die dir erklärt wie es geht.</p>
                 <a class="btn" href="#" download="">Download coming soon →</a>
             </div>
             <div class="template-card">
@@ -188,7 +186,7 @@
                 <p>Mit dieser .psd kannst du ein passendes Hintergrundbild erstellen. Dieses wird in der
                     Spielauswahl
                     angezeigt. Zeig den Spielenden, was sie erwartet.</p>
-                <a class="btn" href="#" download="">Download coming soon →</a>
+                <a class="btn" href="mockups/Hintergund-Mockup.psd" download="">Download →</a>
             </div>
         </div>
     </section>
@@ -225,12 +223,14 @@
         </div>
     </section>
 
+
     <footer class="footer">
         <p>LUDWIG the arcade</p>
         <div class="footer__links">
-            <!-- <a href="#">Instagram</a> kommt evtl noch -->
+           <!-- <a href="#">Instagram</a> kommt evtl noch -->
             <a href="mailto:arcadeludwig@gmail.com">Mail</a>
             <a href="impressum.html">Impressum</a>
+            <a href="datenschutz.html">Datenschutz</a>
         </div>
     </footer>
 
@@ -244,3 +244,4 @@
   </script>
     <script type="module" src="script.js"></script>
 </body>
+
