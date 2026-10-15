@@ -21,21 +21,24 @@ function resizeRenderer() {
 resizeRenderer();
 
 /* licht */
-scene.add(new THREE.AmbientLight(0x606880, 2.4));
+scene.add(new THREE.AmbientLight(0x707890, 3.4));
 scene.add(camera);
 
-
-const keyLight = new THREE.PointLight(0xffffff, 55, 14);
+const keyLight = new THREE.PointLight(0xffffff, 85, 14);
 keyLight.position.set(0, 0.4, 1);
 camera.add(keyLight);
 
-const cyanLight = new THREE.PointLight(0x4cf3ff, 28, 12);
-cyanLight.position.set(-1.2, 0.6, 0.8); 
+const cyanLight = new THREE.PointLight(0x4cf3ff, 34, 12);
+cyanLight.position.set(-1.2, 0.6, 0.8); // relativ zur Kamera, leicht links
 camera.add(cyanLight);
 
-const magentaLight = new THREE.PointLight(0xff3ea5, 28, 12);
-magentaLight.position.set(1.2, -0.3, 0.6); 
+const magentaLight = new THREE.PointLight(0xff3ea5, 30, 12);
+magentaLight.position.set(1.2, -0.3, 0.6); // relativ zur Kamera, leicht rechts
 camera.add(magentaLight);
+
+const softPinkLight = new THREE.PointLight(0xffc2e0, 24, 14);
+softPinkLight.position.set(0.6, 1.3, -0.9);
+camera.add(softPinkLight);
 
 /* steuerung */
 const controls = new OrbitControls(camera, renderer.domElement);
@@ -44,10 +47,13 @@ controls.enablePan = false;
 controls.enableDamping = true;
 controls.dampingFactor = 0.08;
 controls.autoRotate = true;
-controls.autoRotateSpeed = 0.6; 
-canvas.style.cursor = "grab";
-renderer.domElement.addEventListener("pointerdown", () => (canvas.style.cursor = "grabbing"));
-renderer.domElement.addEventListener("pointerup", () => (canvas.style.cursor = "grab"));
+controls.autoRotateSpeed = 0.6; // klein = langsam
+const CURSOR_GRAB = 'url("cursor-grab.png") 12 12, grab';
+const CURSOR_GRABBING = 'url("cursor-grabbing.png") 12 12, grabbing';
+
+canvas.style.cursor = CURSOR_GRAB;
+renderer.domElement.addEventListener("pointerdown", () => (canvas.style.cursor = CURSOR_GRABBING));
+window.addEventListener("pointerup", () => (canvas.style.cursor = CURSOR_GRAB));
 
 /* laden zentrieren und co */
 const cabinet = new THREE.Group();
@@ -91,7 +97,7 @@ loader.load(
     model.scale.setScalar(scaleFactor);
     model.position.set(
       -center.x * scaleFactor,
-      -center.y * scaleFactor + TARGET_HEIGHT / 2, 
+      -center.y * scaleFactor + TARGET_HEIGHT / 2, // Unterkante auf y = 0
       -center.z * scaleFactor
     );
 
