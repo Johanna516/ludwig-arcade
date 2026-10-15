@@ -1,8 +1,44 @@
 
 @font-face {
   font-family: "Monogram";
-  src: url("monogram-extended.ttf") format("truetype");
+  src: url("fonts/monogram-extended.ttf") format("truetype");
   font-display: swap;
+}
+/* space-mono-regular - latin_latin-ext */
+@font-face {
+  font-display: swap;
+  font-family: 'Space Mono';
+  font-style: normal;
+  font-weight: 400;
+  src: url('fonts/space-mono-v17-latin_latin-ext-regular.woff2') format('woff2'),
+       url('fonts/space-mono-v17-latin_latin-ext-regular.ttf') format('truetype'); 
+}
+/* space-mono-italic - latin_latin-ext */
+@font-face {
+  font-display: swap;
+  font-family: 'Space Mono';
+  font-style: italic;
+  font-weight: 400;
+  src: url('fonts/space-mono-v17-latin_latin-ext-italic.woff2') format('woff2'),
+       url('fonts/space-mono-v17-latin_latin-ext-italic.ttf') format('truetype'); 
+}
+/* space-mono-700 - latin_latin-ext */
+@font-face {
+  font-display: swap;
+  font-family: 'Space Mono';
+  font-style: normal;
+  font-weight: 700;
+  src: url('fonts/space-mono-v17-latin_latin-ext-700.woff2') format('woff2'), 
+       url('fonts/space-mono-v17-latin_latin-ext-700.ttf') format('truetype'); 
+}
+/* space-mono-700italic - latin_latin-ext */
+@font-face {
+  font-display: swap;
+  font-family: 'Space Mono';
+  font-style: italic;
+  font-weight: 700;
+  src: url('fonts/space-mono-v17-latin_latin-ext-700italic.woff2') format('woff2'), 
+       url('fonts/space-mono-v17-latin_latin-ext-700italic.ttf') format('truetype');
 }
 
 :root {
@@ -36,6 +72,15 @@ body {
 h1, h2, h3 { font-family: var(--font-display); line-height: 1.3; margin: 0 0 1rem; letter-spacing: 0.02em; }
 
 a { color: var(--neon-cyan); }
+
+a,
+.btn,
+button,
+.nav__lud,
+.nav__links a,
+.footer__links a {
+  cursor: url("cursor-pointer.png") 8 8, pointer;
+}
 
 .glow-heading {
   text-shadow: 0 0 10px var(--neon-cyan), 0 0 26px rgba(155, 188, 12, 0.4), 0 0 44px rgba(48, 98, 47, 0.3);
